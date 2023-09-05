@@ -29,3 +29,11 @@ const createTask = (textValue) => {
   createDeleteButton(li);
   saveTasks();
 };
+
+
+sendTask.addEventListener("click", (e) => {
+  e.preventDefault();
+  if (!inputTask.value) return;
+  createTask(inputTask.value);
+});
+
