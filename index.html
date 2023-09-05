@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/todo-list.css" />
+    <title>Task Tracker</title>
+  </head>
+  <body>
+    <header class="header-wrapper">
+      <h2>Task Tracker</h2>
+    </header>
+    <main class="main-wrapper">
+      <section class="tasksForm-wrapper">
+        <h3>Remember your taks and do them!</h3>
+        <form>
+          <input type="text" id="task" placeholder="New task..." />
+          <button id="send-task">Send</button>
+        </form>
+      </section>
+      <section class="tasks-wrapper">
+        <h3>Your tasks</h3>
+        <ul class="tasks-items-wrapper"></ul>
+      </section>
+    </main>
+
+    <script src="scripts/tasks.js"></script>
+  </body>
+</html>
