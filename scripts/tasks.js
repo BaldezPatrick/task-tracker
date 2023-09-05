@@ -30,6 +30,19 @@ const createTask = (textValue) => {
   saveTasks();
 };
 
+const saveTasks = () => {
+  const liTask = listTask.querySelectorAll("li");
+  const listOfTasks = [];
+  for (let task of liTask) {
+    let taskText = task.innerText;
+    taskText = taskText.replace("Delete", "").trim();
+    listOfTasks.push(taskText);
+  }
+
+  const taskJSON = JSON.stringify(listOfTasks);
+  localStorage.setItem("tasks", taskJSON);
+};
+
 
 sendTask.addEventListener("click", (e) => {
   e.preventDefault();
