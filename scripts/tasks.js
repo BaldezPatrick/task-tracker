@@ -43,6 +43,18 @@ const saveTasks = () => {
   localStorage.setItem("tasks", taskJSON);
 };
 
+const addSavedTasks = () => {
+  const tasks = localStorage.getItem("tasks");
+  if (tasks) {
+    const listOfTasks = JSON.parse(tasks);
+
+    for (let task of listOfTasks) {
+      createTask(task);
+    }
+  }
+};
+
+addSavedTasks();
 
 sendTask.addEventListener("click", (e) => {
   e.preventDefault();
