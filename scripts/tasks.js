@@ -62,3 +62,11 @@ sendTask.addEventListener("click", (e) => {
   createTask(inputTask.value);
 });
 
+document.addEventListener("click", (e) => {
+  const element = e.target;
+
+  if (element.classList.contains("delete")) {
+    element.parentElement.remove();
+    saveTasks();
+  }
+});
