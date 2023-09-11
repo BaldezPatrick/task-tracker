@@ -1,6 +1,9 @@
 const inputTask = document.querySelector("#task");
 const sendTask = document.querySelector("#send-task");
 const listTask = document.querySelector(".tasks-items-wrapper");
+const notifications = document.querySelector(".notifications");
+
+const messages = ["No task to add", "Task added", "Task removed"];
 
 const createDeleteButton = (li) => {
   const deleteButton = document.createElement("button");
