@@ -22,11 +22,7 @@ const createListItem = () => {
 const createNotification = (textValue, messageNotification) => {
   const notification = document.createElement("p");
   notification.classList.add("notification");
-  if (messageNotification === 0 || messageNotification === 2) {
-    notification.style.color = "red";
-  } else {
-    notification.style.color = "green";
-  }
+  notification.style.color = messageNotification === 1 ? "green" : "red";
   notification.innerText = textValue;
   notifications.appendChild(notification);
   setTimeout(() => {
