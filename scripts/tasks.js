@@ -19,6 +19,21 @@ const createListItem = () => {
   return li;
 };
 
+const createNotification = (textValue, messageNotification) => {
+  const notification = document.createElement("p");
+  notification.classList.add("notification");
+  if (messageNotification === 0 || messageNotification === 2) {
+    notification.style.color = "red";
+  } else {
+    notification.style.color = "green";
+  }
+  notification.innerText = textValue;
+  notifications.appendChild(notification);
+  setTimeout(() => {
+    notification.remove();
+  }, 2000);
+};
+
 const cleanUpInput = () => {
   inputTask.value = "";
   inputTask.focus();
