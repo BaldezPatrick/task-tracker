@@ -76,8 +76,12 @@ addSavedTasks();
 
 sendTask.addEventListener("click", (e) => {
   e.preventDefault();
-  if (!inputTask.value) return;
+  if (!inputTask.value) {
+    createNotification(messages[0], 0);
+    return;
+  }
   createTask(inputTask.value);
+  createNotification(messages[1], 1);
 });
 
 document.addEventListener("click", (e) => {
@@ -85,6 +89,7 @@ document.addEventListener("click", (e) => {
 
   if (element.classList.contains("delete")) {
     element.parentElement.remove();
+    createNotification(messages[2], 2);
     saveTasks();
   }
 });
