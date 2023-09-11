@@ -11,6 +11,7 @@ Visit the demo: https://task-tracker-delta-one.vercel.app/
 - Add tasks to your list.
 - Delete completed tasks.
 - Save your tasks for persistence between sessions.
+- Notification system that informs users about added tasks, removed tasks and when there is no task to be added.
 
 ## How to Use
 
