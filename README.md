@@ -33,6 +33,10 @@ Contributions are welcome! Feel free to create issues or submit pull requests fo
 - CSS
 - JavaScript
 
+## Additional information about the project
+
+The project is moving to ReactJs, with NextJs framework. It will have new features that are being thought. This new version is being developed in the branch named dev.
+
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
