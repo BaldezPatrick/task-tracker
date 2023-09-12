@@ -72,7 +72,7 @@ addSavedTasks();
 
 sendTask.addEventListener("click", (e) => {
   e.preventDefault();
-  if (!inputTask.value) {
+  if (!inputTask.value.trim()) {
     createNotification(messages[0], 0);
     return;
   }
