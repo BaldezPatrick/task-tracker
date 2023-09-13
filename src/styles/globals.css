@@ -68,6 +68,10 @@ body {
   width: 60%;
 }
 
+.task-noFound {
+  text-align: center;
+}
+
 .tasks-items-wrapper {
   list-style: none;
   width: 100%;

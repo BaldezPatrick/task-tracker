@@ -6,7 +6,7 @@ const TaskList = ({ tasks, deleteTask, editTask, filterTask }) => {
     <>
       <ul className="tasks-items-wrapper">
         {filteredTasks.length === 0 ? (
-          <li>
+          <li className="task-noFound">
             <p>No task was found...</p>
           </li>
         ) : (
