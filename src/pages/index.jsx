@@ -62,6 +62,19 @@ export default function Home() {
     }
   };
 
+  const saveEditedTask = (e) => {
+    e.preventDefault();
+    const updatedTask = tasks.map((task) =>
+      task.id === editingTask.id ? { ...task, title: newTask } : task
+    );
+
+    setTasks(updatedTask);
+    setNewTask("");
+    setEditingTask(null);
+    createNotifications("Task edited", "success");
+    localStorage.setItem("tasks", JSON.stringify(updatedTask));
+  };
+
   return (
     <>
       <header className="header-wrapper">
@@ -71,7 +84,7 @@ export default function Home() {
         <section className="tasksForm-wrapper">
           <h3>Remember your taks and do them!</h3>
           <TaskForm
-            addTask={addTask}
+            addTask={editingTask ? saveEditedTask : addTask}
             newTask={newTask}
             setNewTask={setNewTask}
           />
