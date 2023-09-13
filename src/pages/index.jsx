@@ -65,6 +65,10 @@ export default function Home() {
 
   const saveEditedTask = (e) => {
     e.preventDefault();
+    if (newTask.trim() === "") {
+      createNotifications("Empty input", "error");
+      return;
+    }
     const updatedTask = tasks.map((task) =>
       task.id === editingTask.id ? { ...task, title: newTask } : task
     );
@@ -78,6 +82,9 @@ export default function Home() {
 
   const cleanUpSearch = (e) => {
     e.preventDefault();
+    if (inputFilterTask.trim() === "") {
+      createNotifications("Search input empty", "error");
+    }
     setInputFilterTask("");
   };
   return (
