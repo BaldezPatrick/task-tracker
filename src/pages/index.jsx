@@ -1,11 +1,16 @@
 import styles from "@/styles/Home.module.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Notifications, TaskForm, TaskList } from "@/components";
 
 export default function Home() {
   const [tasks, setTasks] = useState([]);
   const [newTask, setNewTask] = useState("");
   const [notifications, setNotifications] = useState([]);
+
+  useEffect(() => {
+    const savedTasks = JSON.parse(localStorage.getItem("tasks") || []);
+    setTasks(savedTasks);
+  }, []);
 
   const createNotifications = (textNotification, type) => {
     const notification = {
@@ -39,12 +44,14 @@ export default function Home() {
     setTasks([...tasks, newTaskCreated]);
     setNewTask("");
     createNotifications("Task added", "success");
+    localStorage.setItem("tasks", JSON.stringify([...tasks, newTaskCreated]));
   };
 
   const deleteTask = (taskId) => {
     const deletedTask = tasks.filter((task) => task.id !== taskId);
     setTasks(deletedTask);
     createNotifications("Task deleted", "delete");
+    localStorage.setItem("tasks", JSON.stringify(deletedTask));
   };
 
   return (
