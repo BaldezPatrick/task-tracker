@@ -76,6 +76,10 @@ export default function Home() {
     localStorage.setItem("tasks", JSON.stringify(updatedTask));
   };
 
+  const cleanUpSearch = (e) => {
+    e.preventDefault();
+    setInputFilterTask("");
+  };
   return (
     <>
       <header className="header-wrapper">
@@ -87,6 +91,7 @@ export default function Home() {
           <TaskSearch
             inputFilterTask={inputFilterTask}
             setInputFilterTask={setInputFilterTask}
+            cleanUpSearch={cleanUpSearch}
           />
           <TaskForm
             addTask={editingTask ? saveEditedTask : addTask}

@@ -1,14 +1,14 @@
-const TaskSearch = ({ inputFilterTask, setInputFilterTask }) => {
+const TaskSearch = ({ inputFilterTask, setInputFilterTask, cleanUpSearch }) => {
   return (
     <>
-      <form>
+      <form onSubmit={cleanUpSearch}>
         <input
           type="text"
           placeholder="Search"
           value={inputFilterTask}
           onChange={(e) => setInputFilterTask(e.target.value)}
         />
-        <button onClick={(e) => setInputFilterTask("")}>Clean search</button>
+        <button type="submit">Clean search</button>
       </form>
     </>
   );
