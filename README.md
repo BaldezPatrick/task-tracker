@@ -21,7 +21,19 @@ Visit the demo: https://task-tracker-delta-one.vercel.app/
 
 ## Installation
 
-No installation is required to use Task Tracker. Simply open the `index.html` file in your favorite web browser.
+To run this project locally, follow these steps:
+
+1. Clone this repository to your local machine using the following command:
+
+```
+    git clone <repository-url>
+```
+2. Navigate to the project directory.
+3. Make sure you have installed Live Server, then click "Go Live"
+
+Or
+
+Simply open the `index.html` file in your favorite web browser.
 
 ## Contribution
 
