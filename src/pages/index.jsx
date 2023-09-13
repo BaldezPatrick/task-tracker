@@ -91,7 +91,12 @@ export default function Home() {
         </section>
         <section className="tasks-wrapper">
           <h3>Your tasks</h3>
-          <TaskList tasks={tasks} deleteTask={deleteTask} editTask={editTask} />
+          <TaskList
+            tasks={tasks}
+            deleteTask={deleteTask}
+            editTask={editTask}
+            filterTask={inputFilterTask}
+          />
         </section>
       </main>
       <div className="notifications">
