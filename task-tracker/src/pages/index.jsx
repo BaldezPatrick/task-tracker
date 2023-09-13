@@ -27,6 +27,7 @@ export default function Home() {
   const addTask = (e) => {
     e.preventDefault();
     if (newTask.trim() === "") {
+      createNotifications("Empty input", "delete");
       return;
     }
 
@@ -37,11 +38,13 @@ export default function Home() {
 
     setTasks([...tasks, newTaskCreated]);
     setNewTask("");
+    createNotifications("Task added", "success");
   };
 
   const deleteTask = (taskId) => {
     const deletedTask = tasks.filter((task) => task.id !== taskId);
     setTasks(deletedTask);
+    createNotifications("Task deleted", "delete");
   };
 
   return (
@@ -71,7 +74,7 @@ export default function Home() {
               <li key={task.id} className="tasks-item">
                 {task.title}
                 <button onClick={() => deleteTask(task.id)}>Delete</button>
-            </li>
+              </li>
             ))}
           </ul>
         </section>
