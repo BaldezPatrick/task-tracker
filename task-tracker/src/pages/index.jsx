@@ -1,5 +1,6 @@
 import styles from "@/styles/Home.module.css";
 import { useState } from "react";
+import Notifications from "@/components/notifications";
 
 export default function Home() {
   const [tasks, setTasks] = useState([]);
@@ -57,6 +58,16 @@ export default function Home() {
           </ul>
         </section>
       </main>
+      <div className="notifications">
+        {notifications.map((notification) => (
+          <Notifications
+            key={notification.id}
+            type={notification.type}
+            message={notification.textNotification}
+            closeNotification={() => deleteNotification(notification.id)}
+          />
+        ))}
+      </div>
     </>
   );
 }
