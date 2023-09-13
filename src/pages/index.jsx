@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-import { Notifications, TaskForm, TaskList } from "@/components";
+import { Notifications, TaskForm, TaskList, TaskSearch } from "@/components";
 
 export default function Home() {
   const [tasks, setTasks] = useState([]);
   const [newTask, setNewTask] = useState("");
   const [notifications, setNotifications] = useState([]);
   const [editingTask, setEditingTask] = useState(null);
+  const [inputFilterTask, setInputFilterTask] = useState("");
 
   useEffect(() => {
     const savedTasks = JSON.parse(localStorage.getItem("tasks") || []);
@@ -83,6 +84,10 @@ export default function Home() {
       <main className="main-wrapper">
         <section className="tasksForm-wrapper">
           <h3>Remember your taks and do them!</h3>
+          <TaskSearch
+            inputFilterTask={inputFilterTask}
+            setInputFilterTask={setInputFilterTask}
+          />
           <TaskForm
             addTask={editingTask ? saveEditedTask : addTask}
             newTask={newTask}
