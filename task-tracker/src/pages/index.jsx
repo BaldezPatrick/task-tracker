@@ -1,6 +1,8 @@
 import styles from "@/styles/Home.module.css";
+import { useState } from "react";
 
 export default function Home() {
+  const [tasks, setTasks] = useState([]);
   return (
     <>
       <header className="header-wrapper">
@@ -17,12 +19,12 @@ export default function Home() {
         <section className="tasks-wrapper">
           <h3>Your tasks</h3>
           <ul className="tasks-items-wrapper">
-            <li className="tasks-item">
-              Teste Um <button>Delete</button>
+            {tasks.map((task) => (
+              <li key={task.id} className="tasks-item">
+                {task.title}
+                <button>Delete</button>
             </li>
-            <li className="tasks-item">
-              Teste Dois <button>Delete</button>
-            </li>
+            ))}
           </ul>
         </section>
       </main>
