@@ -130,6 +130,11 @@ body {
     min-width: 200px;
     font-size: 12pt;
   }
+
+  .tasks-item {
+    text-align: center;
+    flex-direction: column;
+  }
 }
 
 @media screen and (max-width: 500px) {
