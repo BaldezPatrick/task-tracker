@@ -95,7 +95,7 @@ body {
 
 .buttons-wrapper {
   display: flex;
-  gap: 2rem;
+  gap: .9rem;
 }
 
 .notifications {
