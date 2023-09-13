@@ -99,13 +99,13 @@ body {
 }
 
 .notifications {
-  align-items: flex-end;
+  align-items: flex-start;
   top: 10px;
   display: flex;
   flex-direction: column;
   gap: 1rem;
   position: fixed;
-  right: 10px;
+  left: 10px;
 }
 
 .notification {
@@ -114,6 +114,15 @@ body {
   box-shadow: 1px 1px 5px rgb(188, 183, 183);
   padding: 0.8rem 1.5rem;
   font-size: 12pt;
+}
+
+.notification.error,
+.notification.delete {
+  color: red;
+}
+
+.notification.success {
+  color: green;
 }
 
 @media screen and (max-width: 570px) {
