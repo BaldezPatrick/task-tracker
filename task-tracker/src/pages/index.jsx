@@ -17,6 +17,13 @@ export default function Home() {
     setNotifications([...notifications, notification]);
   };
 
+  const deleteNotification = (notificationId) => {
+    const deletedNotification = notifications.filter(
+      (notification) => notification.id !== notificationId
+    );
+    setNotifications(deletedNotification);
+  };
+
   const addTask = (e) => {
     e.preventDefault();
     if (newTask.trim() === "") {
