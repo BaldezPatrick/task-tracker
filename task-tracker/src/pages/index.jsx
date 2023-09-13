@@ -20,6 +20,11 @@ export default function Home() {
     setNewTask("");
   };
 
+  const deleteTask = (taskId) => {
+    const deletedTask = tasks.filter((task) => task.id !== taskId);
+    setTasks(deletedTask);
+  };
+
   return (
     <>
       <header className="header-wrapper">
@@ -46,7 +51,7 @@ export default function Home() {
             {tasks.map((task) => (
               <li key={task.id} className="tasks-item">
                 {task.title}
-                <button>Delete</button>
+                <button onClick={() => deleteTask(task.id)}>Delete</button>
             </li>
             ))}
           </ul>
