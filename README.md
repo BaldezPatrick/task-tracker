@@ -1,38 +1,72 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Task Tracker V0.2
 
-## Getting Started
+Task Tracker is a simple web application designed to help you remember and manage your daily tasks. You can easily add and delete tasks as you perform them. With this second version, the project has been migrated to React with the NextJs framework to provide a more powerful and effective user experience.
 
-First, run the development server:
+Visit the demo: https://task-tracker-delta-one.vercel.app/ 
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+## Features
+
+- Add tasks to your list.
+- NEW: Edit tasks to your list.
+- Delete completed tasks.
+- Save your tasks for persistence between sessions.
+- Notification system that informs users about added tasks, removed tasks and when there is no task to be added.
+- NEW: Task filtering to find specific tasks.
+
+## How to Use
+
+1. Type the task you want to add into the New Task input box.
+2. Click the "Send" button to add the task to the list.
+3. To delete a task, click the "Delete" button next to it.
+4. NEW: To edit a task, click the "Edit" button, then the task will show in the New Task input box. After that just type to edit and send. 
+5. New: To serch a task, write it in the Search input box and the task will appear in the list. ift the task doesn't have the letter or word sought, it will result in an empty list.
+6. New: To clean up the search input and see the list again, just click in the "clean search" button.
+
+
+## Installation
+
+To run this project locally, follow these steps:
+
+1. Clone this repository to your local machine using the following command:
+
+```
+    git clone <repository-url>
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Navigate to the project directory.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+3. Install the project dependencies:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+```
+    npm install
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+4. Start the development server:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```
+    npm run dev
+```
 
-## Learn More
+## Contribution
 
-To learn more about Next.js, take a look at the following resources:
+Contributions are welcome! Feel free to create issues or submit pull requests for improvements.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Technologies Used
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- HTML
+- CSS
+- JavaScript
+- NEW: ReactJs
+- NEW: NextJs
 
-## Deploy on Vercel
+## Additional information about the project
+The production branch in main, so all current versions will be in main. For each old version, a specific branch will be created to be accessed and viewed.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Task Tracker versions
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [V0.1](https://github.com/BaldezPatrick/task-tracker/tree/v0.1-task-tracker)
+
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
