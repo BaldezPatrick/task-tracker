@@ -1,4 +1,4 @@
-# Task Tracker
+# Task Tracker V0.1
 
 Task Tracker is a simple web application designed to help you remember and manage your daily tasks. You can easily add and delete tasks as you perform them.
 
