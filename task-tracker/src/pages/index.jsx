@@ -5,6 +5,17 @@ import Notifications from "@/components/notifications";
 export default function Home() {
   const [tasks, setTasks] = useState([]);
   const [newTask, setNewTask] = useState("");
+  const [notifications, setNotifications] = useState([]);
+
+  const createNotifications = (textNotification, type) => {
+    const notification = {
+      id: Date.now(),
+      textNotification,
+      type,
+    };
+
+    setNotifications([...notifications, notification]);
+  };
 
   const addTask = (e) => {
     e.preventDefault();
