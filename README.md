@@ -2,7 +2,9 @@
 
 Task Tracker is a simple web application designed to help you remember and manage your daily tasks. You can easily add and delete tasks as you perform them. With this second version, the project has been migrated to React with the NextJs framework to provide a more powerful and effective user experience.
 
-Visit the demo: https://task-tracker-delta-one.vercel.app/ 
+## 🔗 Links
+
+Visit the demo: https://task-tracker-delta-one.vercel.app/
 
 ## Features
 
