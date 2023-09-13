@@ -1,8 +1,6 @@
 import styles from "@/styles/Home.module.css";
 import { useState } from "react";
-import Notifications from "@/components/notifications";
-import TaskList from "@/components/taskList";
-import TaskForm from "@/components/taskForm";
+import { Notifications, TaskForm, TaskList } from "@/components";
 
 export default function Home() {
   const [tasks, setTasks] = useState([]);
