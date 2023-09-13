@@ -3,6 +3,23 @@ import { useState } from "react";
 
 export default function Home() {
   const [tasks, setTasks] = useState([]);
+  const [newTask, setNewTask] = useState("");
+
+  const addTask = (e) => {
+    e.preventDefault();
+    if (newTask.trim() === "") {
+      return;
+    }
+
+    const newTaskCreated = {
+      id: Date.now(),
+      title: newTask,
+    };
+
+    setTasks([...tasks, newTaskCreated]);
+    setNewTask("");
+  };
+
   return (
     <>
       <header className="header-wrapper">
@@ -11,9 +28,16 @@ export default function Home() {
       <main className="main-wrapper">
         <section className="tasksForm-wrapper">
           <h3>Remember your taks and do them!</h3>
-          <form>
-            <input type="text" id="task" placeholder="New task..." />
-            <button id="send-task">Send</button>
+          <form onSubmit={addTask}>
+            <input
+              type="text"
+              placeholder="New task..."
+              value={newTask}
+              onChange={(e) => setNewTask(e.target.value)}
+            />
+            <button id="send-task" type="submit">
+              Send
+            </button>
           </form>
         </section>
         <section className="tasks-wrapper">
