@@ -5,6 +5,7 @@ export default function Home() {
   const [tasks, setTasks] = useState([]);
   const [newTask, setNewTask] = useState("");
   const [notifications, setNotifications] = useState([]);
+  const [editingTask, setEditingTask] = useState(null);
 
   useEffect(() => {
     const savedTasks = JSON.parse(localStorage.getItem("tasks") || []);
@@ -53,6 +54,14 @@ export default function Home() {
     localStorage.setItem("tasks", JSON.stringify(deletedTask));
   };
 
+  const editTask = (taskId) => {
+    const taskToEdit = tasks.find((task) => task.id === taskId);
+    if (taskToEdit) {
+      setEditingTask(taskToEdit);
+      setNewTask(taskToEdit.title);
+    }
+  };
+
   return (
     <>
       <header className="header-wrapper">
@@ -69,7 +78,7 @@ export default function Home() {
         </section>
         <section className="tasks-wrapper">
           <h3>Your tasks</h3>
-          <TaskList tasks={tasks} deleteTask={deleteTask} />
+          <TaskList tasks={tasks} deleteTask={deleteTask} editTask={editTask} />
         </section>
       </main>
       <div className="notifications">
