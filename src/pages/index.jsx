@@ -1,6 +1,7 @@
 import styles from "@/styles/Home.module.css";
 import { useState } from "react";
 import Notifications from "@/components/notifications";
+import TaskList from "@/components/taskList";
 
 export default function Home() {
   const [tasks, setTasks] = useState([]);
@@ -69,14 +70,7 @@ export default function Home() {
         </section>
         <section className="tasks-wrapper">
           <h3>Your tasks</h3>
-          <ul className="tasks-items-wrapper">
-            {tasks.map((task) => (
-              <li key={task.id} className="tasks-item">
-                {task.title}
-                <button onClick={() => deleteTask(task.id)}>Delete</button>
-              </li>
-            ))}
-          </ul>
+          <TaskList tasks={tasks} deleteTask={deleteTask} />
         </section>
       </main>
       <div className="notifications">
