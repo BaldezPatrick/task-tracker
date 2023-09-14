@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import styles from "../styles/notifications.module.css";
 
 const Notifications = ({ message, type, closeNotification }) => {
   useEffect(() => {
@@ -11,9 +12,9 @@ const Notifications = ({ message, type, closeNotification }) => {
 
   return (
     <>
-      <p className={`notification ${type}`}>
+      <p className={`${styles.notification} ${styles[`${type}`]}`}>
         {message}
-        <span className="progressBar"></span>
+        <span className={`${styles.progressBar}`}></span>
       </p>
     </>
   );

@@ -1,0 +1,50 @@
+.tasksItemsWrapper {
+  list-style: none;
+  width: 100%;
+}
+
+.taskNoFound {
+  text-align: center;
+}
+
+.tasksItem {
+  border: 4px solid black;
+  padding: 6px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 5px 0; 
+}
+
+.tasksItem:hover {
+  background-color: #ffd803;
+}
+
+.tasksItem button {
+  cursor: pointer;
+  outline: none;
+  padding: 2px 20px;
+}
+
+.tasksItem:hover button {
+  background-color: black;
+  color: white;
+}
+
+.buttonsWrapper {
+  display: flex;
+  gap: .9rem;
+}
+
+@media screen and (max-width: 570px) {
+  .tasksItem {
+    text-align: center;
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .buttonsWrapper {
+    flex-direction: column;
+  }
+}

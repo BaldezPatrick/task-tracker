@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Notifications, TaskForm, TaskList, TaskSearch } from "@/components";
+import styles from "../styles/home.module.css";
 
 export default function Home() {
   const [tasks, setTasks] = useState([]);
@@ -84,7 +85,7 @@ export default function Home() {
   const cleanUpSearch = (e) => {
     e.preventDefault();
     if (inputFilterTask.trim() === "") {
-      createNotifications("Search input empty", "error");
+      return;
     }
     setInputFilterTask("");
   };
@@ -95,11 +96,11 @@ export default function Home() {
 
   return (
     <>
-      <header className="header-wrapper">
+      <header className={styles.headerWrapper}>
         <h2>Task Tracker</h2>
       </header>
-      <main className="main-wrapper">
-        <section className="tasksForm-wrapper">
+      <main className={styles.mainWrapper}>
+        <section className={styles.tasksFormWrapper}>
           <h3>Remember your taks and do them!</h3>
           <TaskSearch
             inputFilterTask={inputFilterTask}
@@ -113,7 +114,7 @@ export default function Home() {
             setNewTask={setNewTask}
           />
         </section>
-        <section className="tasks-wrapper">
+        <section className={styles.tasksWrapper}>
           <h3>Your tasks</h3>
           <TaskList
             tasks={tasks}
@@ -123,7 +124,7 @@ export default function Home() {
           />
         </section>
       </main>
-      <div className="notifications">
+      <div className={styles.notifications}>
         {notifications.map((notification) => (
           <Notifications
             key={notification.id}

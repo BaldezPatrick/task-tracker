@@ -1,0 +1,101 @@
+.headerWrapper {
+    box-shadow: 2px 2px 2px #00000024;
+    min-width: 100%;
+    padding: 20px;
+    text-align: center;
+}
+
+.mainWrapper {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.tasksFormWrapper {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    min-width: 100%;
+    padding: 1rem 0;
+}
+
+.tasksWrapper {
+    align-items: center;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    opacity: 0.75;
+    padding: 15px 10px;
+    width: 60%;
+}
+
+.tasksFormWrapper input {
+    background-color: transparent;
+    border: 4px solid black;
+    font-size: 15pt;
+    min-width: 500px;
+    outline: none;
+    padding: 0 5px;
+}
+
+.tasksFormWrapper input::placeholder {
+    color: rgb(0, 0, 0, 0.5);
+    font-size: 1rem;
+}
+
+.tasksFormWrapper input:focus {
+    background-color: #ffd803;
+}
+
+.tasksFormWrapper button {
+    background-color: black;
+    cursor: pointer;
+    border: none;
+    padding: 5px 18px;
+    color: white;
+    text-align: center;
+    width: 30%;
+}
+
+.tasksFormWrapper button:hover {
+    color: white;
+}
+
+.notifications {
+    align-items: flex-start;
+    top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: fixed;
+    left: 10px;
+}
+
+@media screen and (max-width: 570px) {
+    .tasksFormWrapper input {
+      min-width: 200px;
+      font-size: 12pt;
+    }
+}
+  
+@media screen and (max-width: 500px) {
+.tasksFormWrapper {
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.tasksFormWrapper h3 {
+    text-align: center;
+}
+
+.tasksFormWrapper input {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+}
