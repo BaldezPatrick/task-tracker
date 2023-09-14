@@ -1,9 +1,14 @@
-const TaskSearch = ({
-  inputFilterTask,
-  setInputFilterTask,
-  cleanUpSearch,
-  handleBlur,
-}) => {
+const TaskSearch = ({ inputFilterTask, setInputFilterTask, cleanUpSearch }) => {
+  const handleButtonInfo = () => {
+    if (!inputFilterTask) {
+      return "Search";
+    } else {
+      return "Reset";
+    }
+  };
+
+  const buttonInfo = handleButtonInfo();
+
   return (
     <>
       <form onSubmit={cleanUpSearch}>
@@ -12,9 +17,8 @@ const TaskSearch = ({
           placeholder="Search task..."
           value={inputFilterTask}
           onChange={(e) => setInputFilterTask(e.target.value)}
-          onBlur={handleBlur}
         />
-        <button type="submit">Clean search</button>
+        <button type="submit">{buttonInfo}</button>
       </form>
     </>
   );

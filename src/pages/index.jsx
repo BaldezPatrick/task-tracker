@@ -90,10 +90,6 @@ export default function Home() {
     setInputFilterTask("");
   };
 
-  const handleBlur = () => {
-    setInputFilterTask("");
-  };
-
   return (
     <>
       <header className={styles.headerWrapper}>
@@ -102,16 +98,15 @@ export default function Home() {
       <main className={styles.mainWrapper}>
         <section className={styles.tasksFormWrapper}>
           <h3>Remember your taks and do them!</h3>
-          <TaskSearch
-            inputFilterTask={inputFilterTask}
-            setInputFilterTask={setInputFilterTask}
-            cleanUpSearch={cleanUpSearch}
-            handleBlur={handleBlur}
-          />
           <TaskForm
             addTask={editingTask ? saveEditedTask : addTask}
             newTask={newTask}
             setNewTask={setNewTask}
+          />
+          <TaskSearch
+            inputFilterTask={inputFilterTask}
+            setInputFilterTask={setInputFilterTask}
+            cleanUpSearch={cleanUpSearch}
           />
         </section>
         <section className={styles.tasksWrapper}>
