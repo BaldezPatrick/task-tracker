@@ -44,6 +44,7 @@ export default function Home() {
 
     setTasks([...tasks, newTaskCreated]);
     setNewTask("");
+    setInputFilterTask("");
     createNotifications("Task added", "success");
     localStorage.setItem("tasks", JSON.stringify([...tasks, newTaskCreated]));
   };
@@ -88,6 +89,10 @@ export default function Home() {
     setInputFilterTask("");
   };
 
+  const handleBlur = () => {
+    setInputFilterTask("");
+  };
+
   return (
     <>
       <header className="header-wrapper">
@@ -100,6 +105,7 @@ export default function Home() {
             inputFilterTask={inputFilterTask}
             setInputFilterTask={setInputFilterTask}
             cleanUpSearch={cleanUpSearch}
+            handleBlur={handleBlur}
           />
           <TaskForm
             addTask={editingTask ? saveEditedTask : addTask}
