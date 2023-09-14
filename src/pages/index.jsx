@@ -10,7 +10,7 @@ export default function Home() {
   const [inputFilterTask, setInputFilterTask] = useState("");
 
   useEffect(() => {
-    const savedTasks = JSON.parse(localStorage.getItem("tasks") || []);
+    const savedTasks = JSON.parse(localStorage.getItem("tasks") || "[]");
     setTasks(savedTasks);
   }, []);
 
