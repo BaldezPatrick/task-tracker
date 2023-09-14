@@ -11,7 +11,10 @@ const Notifications = ({ message, type, closeNotification }) => {
 
   return (
     <>
-      <p className={`notification ${type}`}>{message}</p>
+      <p className={`notification ${type}`}>
+        {message}
+        <span className="progressBar"></span>
+      </p>
     </>
   );
 };
