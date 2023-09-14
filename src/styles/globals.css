@@ -137,7 +137,7 @@ body {
   height: 100px;
   left: 0;
   top: calc(100% - 5px);
-  animation: barProgress 2s linear forwards;
+  animation: barProgress 800ms linear forwards;
 }
 
 .notification.success > span {

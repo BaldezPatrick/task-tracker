@@ -87,6 +87,7 @@ export default function Home() {
     }
     setInputFilterTask("");
   };
+
   return (
     <>
       <header className="header-wrapper">

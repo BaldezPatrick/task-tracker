@@ -4,10 +4,10 @@ const Notifications = ({ message, type, closeNotification }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       closeNotification();
-    }, 2000);
+    }, 800);
 
     return () => clearTimeout(timer);
-  }, [closeNotification]);
+  }, []);
 
   return (
     <>
