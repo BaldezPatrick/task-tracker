@@ -20,9 +20,9 @@ Visit the demo: https://task-tracker-delta-one.vercel.app/
 1. Type the task you want to add into the New Task input box.
 2. Click the "Send" button to add the task to the list.
 3. To delete a task, click the "Delete" button next to it.
-4. NEW: To edit a task, click the "Edit" button, then the task will show in the New Task input box. After that just type to edit and send. 
-5. New: To serch a task, write it in the Search input box and the task will appear in the list. ift the task doesn't have the letter or word sought, it will result in an empty list.
-6. New: To clean up the search input and see the list again, just click in the "clean search" button.
+4. NEW: To edit a task, click the "Edit" button, then you are going to be able to edit. After just click in the save button. 
+5. New: To serch a task, write it in the Search input box and the task will appear in the list. if the task doesn't have the letter or word sought, it will result in an empty list. It is a 
+dynamic list.
 
 
 ## Installation
