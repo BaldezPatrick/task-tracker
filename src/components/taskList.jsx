@@ -1,9 +1,13 @@
+import { useMemo } from "react";
 import styles from "../styles/taskList.module.css";
 
 const TaskList = ({ tasks, deleteTask, editTask, filterTask }) => {
-  const filteredTasks = tasks.filter((task) =>
-    task.title.toLowerCase().includes(filterTask.toLowerCase())
+  const filterTaskToLowerCase = filterTask.toLowerCase();
+  const filteredTasks = useMemo(() => {
+    return tasks.filter((task) =>
+      task.title.toLowerCase().includes(filterTaskToLowerCase)
   );
+  }, [tasks, filterTaskToLowerCase]);
   return (
     <>
       <ul className={styles.tasksItemsWrapper}>
