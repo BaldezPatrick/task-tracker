@@ -3,7 +3,7 @@ const TaskSearch = ({ inputFilterTask, setInputFilterTask, cleanUpSearch }) => {
     if (!inputFilterTask) {
       return "Search";
     } else {
-      return "Reset";
+      return "X";
     }
   };
 
