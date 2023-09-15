@@ -7,6 +7,12 @@
   text-align: center;
 }
 
+.taskEditForm {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
 .tasksItem {
   border: 4px solid black;
   padding: 6px 10px;
@@ -23,8 +29,11 @@
 .tasksItem input {
   background-color: transparent;
   font-size: 15pt;
+  border: none;
+  border-bottom: 4px solid black;
   height: 1.9rem;
   width: 40%;
+  outline: none;
 }
 
 .tasksItem button {
