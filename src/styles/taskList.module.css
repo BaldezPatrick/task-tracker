@@ -13,11 +13,18 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 5px 0; 
+  margin: 5px 0;
 }
 
 .tasksItem:hover {
   background-color: #ffd803;
+}
+
+.tasksItem input {
+  background-color: transparent;
+  font-size: 15pt;
+  height: 1.9rem;
+  width: 40%;
 }
 
 .tasksItem button {
@@ -41,6 +48,12 @@
     text-align: center;
     flex-direction: column;
   }
+
+  .tasksItem input {
+    text-align: center;
+    width: 50%;
+  }
+
 }
 
 @media screen and (max-width: 280px) {
