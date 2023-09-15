@@ -1,4 +1,4 @@
-const TaskForm = ({ addTask, newTask, setNewTask }) => {
+const TaskForm = ({ addTask, setNewTask, newTask }) => {
   return (
     <>
       <form onSubmit={addTask}>

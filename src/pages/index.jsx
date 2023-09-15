@@ -4,10 +4,11 @@ import styles from "../styles/home.module.css";
 
 export default function Home() {
   const [tasks, setTasks] = useState([]);
-  const [newTask, setNewTask] = useState("");
   const [notifications, setNotifications] = useState([]);
   const [editingTask, setEditingTask] = useState(null);
+  const [newTask, setNewTask] = useState("");
   const [inputFilterTask, setInputFilterTask] = useState("");
+  const [inputTaskEdit, setInputTaskEdit] = useState("");
 
   useEffect(() => {
     const savedTasks = JSON.parse(localStorage.getItem("tasks") || "[]");
@@ -61,22 +62,22 @@ export default function Home() {
     const taskToEdit = tasks.find((task) => task.id === taskId);
     if (taskToEdit) {
       setEditingTask(taskToEdit);
-      setNewTask(taskToEdit.title);
+      setInputTaskEdit(taskToEdit.title);
     }
   };
 
   const saveEditedTask = (e) => {
     e.preventDefault();
-    if (newTask.trim() === "") {
+    if (inputTaskEdit.trim() === "") {
       createNotifications("Empty input", "error");
       return;
     }
     const updatedTask = tasks.map((task) =>
-      task.id === editingTask.id ? { ...task, title: newTask } : task
+      task.id === editingTask.id ? { ...task, title: inputTaskEdit } : task
     );
 
     setTasks(updatedTask);
-    setNewTask("");
+    setInputTaskEdit("");
     setEditingTask(null);
     createNotifications("Task edited", "success");
     localStorage.setItem("tasks", JSON.stringify(updatedTask));
@@ -99,7 +100,7 @@ export default function Home() {
         <section className={styles.tasksFormWrapper}>
           <h3>Remember your taks and do them!</h3>
           <TaskForm
-            addTask={editingTask ? saveEditedTask : addTask}
+            addTask={addTask}
             newTask={newTask}
             setNewTask={setNewTask}
           />
@@ -112,6 +113,10 @@ export default function Home() {
         <section className={styles.tasksWrapper}>
           <h3>Your tasks</h3>
           <TaskList
+            editingTask={editingTask}
+            saveEditedTask={saveEditedTask}
+            setInputTaskEdit={setInputTaskEdit}
+            inputTaskEdit={inputTaskEdit}
             tasks={tasks}
             deleteTask={deleteTask}
             editTask={editTask}
