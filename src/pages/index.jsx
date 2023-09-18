@@ -11,8 +11,12 @@ export default function Home() {
   const [inputTaskEdit, setInputTaskEdit] = useState("");
 
   useEffect(() => {
-    const savedTasks = JSON.parse(localStorage.getItem("tasks") || "[]");
-    setTasks(savedTasks);
+    try {
+      const savedTasks = JSON.parse(localStorage.getItem("tasks") || "[]");
+      setTasks(savedTasks);
+    } catch (error) {
+      console.error("Error: ", error);
+    }
   }, []);
 
   const createNotifications = (textNotification, type) => {
@@ -33,29 +37,37 @@ export default function Home() {
   };
 
   const addTask = (e) => {
-    e.preventDefault();
-    if (newTask.trim() === "") {
-      createNotifications("Empty input", "delete");
-      return;
+    try {
+      e.preventDefault();
+      if (newTask.trim() === "") {
+        createNotifications("Empty input", "delete");
+        return;
+      }
+
+      const newTaskCreated = {
+        id: Date.now(),
+        title: newTask,
+      };
+
+      setTasks([...tasks, newTaskCreated]);
+      setNewTask("");
+      setInputFilterTask("");
+      createNotifications("Task added", "success");
+      localStorage.setItem("tasks", JSON.stringify([...tasks, newTaskCreated]));
+    } catch (error) {
+      console.error("Error: ", error);
     }
-
-    const newTaskCreated = {
-      id: Date.now(),
-      title: newTask,
-    };
-
-    setTasks([...tasks, newTaskCreated]);
-    setNewTask("");
-    setInputFilterTask("");
-    createNotifications("Task added", "success");
-    localStorage.setItem("tasks", JSON.stringify([...tasks, newTaskCreated]));
   };
 
   const deleteTask = (taskId) => {
-    const deletedTask = tasks.filter((task) => task.id !== taskId);
-    setTasks(deletedTask);
-    createNotifications("Task deleted", "delete");
-    localStorage.setItem("tasks", JSON.stringify(deletedTask));
+    try {
+      const deletedTask = tasks.filter((task) => task.id !== taskId);
+      setTasks(deletedTask);
+      createNotifications("Task deleted", "delete");
+      localStorage.setItem("tasks", JSON.stringify(deletedTask));
+    } catch (error) {
+      console.error("Error: ", error);
+    }
   };
 
   const editTask = (taskId) => {
@@ -67,20 +79,24 @@ export default function Home() {
   };
 
   const saveEditedTask = (e) => {
-    e.preventDefault();
-    if (inputTaskEdit.trim() === "") {
-      createNotifications("Empty input", "error");
-      return;
-    }
-    const updatedTask = tasks.map((task) =>
-      task.id === editingTask.id ? { ...task, title: inputTaskEdit } : task
-    );
+    try {
+      e.preventDefault();
+      if (inputTaskEdit.trim() === "") {
+        createNotifications("Empty input", "error");
+        return;
+      }
+      const updatedTask = tasks.map((task) =>
+        task.id === editingTask.id ? { ...task, title: inputTaskEdit } : task
+      );
 
-    setTasks(updatedTask);
-    setInputTaskEdit("");
-    setEditingTask(null);
-    createNotifications("Task edited", "success");
-    localStorage.setItem("tasks", JSON.stringify(updatedTask));
+      setTasks(updatedTask);
+      setInputTaskEdit("");
+      setEditingTask(null);
+      createNotifications("Task edited", "success");
+      localStorage.setItem("tasks", JSON.stringify(updatedTask));
+    } catch (error) {
+      console.error("Error: ", error);
+    }
   };
 
   const cleanUpSearch = (e) => {
