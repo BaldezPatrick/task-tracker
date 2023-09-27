@@ -5,6 +5,19 @@
     text-align: center;
 }
 
+.selectLangWrapper {
+    position: absolute;
+    top: 1.5rem;
+}
+
+.selectLangWrapper select {
+    background-color: transparent;
+    border: none;
+    padding: 5px 15px;
+    outline: none;
+    width: 100%;
+}
+
 .mainWrapper {
     align-items: center;
     display: flex;
@@ -83,6 +96,20 @@
 }
   
 @media screen and (max-width: 500px) {
+.selectLangWrapper {
+    top: 90vh;
+    left: 0;
+    position: fixed;
+}
+
+.selectLangWrapper select {
+    padding: 0;
+}
+
+.selectLangWrapper select option {
+    border: none;
+}
+
 .tasksFormWrapper {
     padding-right: 10px;
     padding-left: 10px;
