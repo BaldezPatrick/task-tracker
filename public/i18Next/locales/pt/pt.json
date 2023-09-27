@@ -1,0 +1,33 @@
+{
+  "translation": {
+    "header": {
+      "title": "Task Tracker"
+    },
+    "main": {
+      "title": "Lembre-se de suas tarefas e as faça!"
+    },
+    "selectedLanguage": {
+      "pt": "PT",
+      "en": "EN"
+    },
+    "taskForm": {
+      "placeholderSend": "Nova tarefa...",
+      "placeholderSearch": "Buscar tarefa...",
+      "buttonSendText": "Enviar",
+      "buttonSearchText": "Buscar"
+    },
+    "taskList": {
+      "infoFirstTask": "Nos diga sua primeira tarefa",
+      "infoTaskNotFound": "Tarefa não encontrada",
+      "saveButton": "Salvar",
+      "editButton": "Editar",
+      "deleteButton": "Deletar"
+    },
+    "notifications": {
+      "success": "Tarefa adicionada",
+      "delete": "Tarefa deletada",
+      "edit": "Tarefa editada",
+      "error": "Input vazio"
+    }
+  }
+}
