@@ -97,7 +97,6 @@
   
 @media screen and (max-width: 500px) {
 .selectLangWrapper {
-    top: 90vh;
     left: 0;
     position: fixed;
 }
