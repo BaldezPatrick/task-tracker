@@ -4,7 +4,8 @@
       "title": "Task Tracker"
     },
     "main": {
-      "title": "Remember your tasks and do them!"
+      "title1": "Remember your tasks and do them!",
+      "title2": "Your tasks"
     },
     "selectedLanguage": {
       "pt": "PT",

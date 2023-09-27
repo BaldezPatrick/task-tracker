@@ -125,7 +125,7 @@ export default function Home() {
       </header>
       <main className={styles.mainWrapper}>
         <section className={styles.tasksFormWrapper}>
-          <h3>{t("main.title")}</h3>
+          <h3>{t("main.title1")}</h3>
           <TaskForm
             addTask={addTask}
             newTask={newTask}
@@ -138,7 +138,7 @@ export default function Home() {
           />
         </section>
         <section className={styles.tasksWrapper}>
-          <h3>Your tasks</h3>
+          <h3>{t("main.title2")}</h3>
           <TaskList
             editingTask={editingTask}
             saveEditedTask={saveEditedTask}
