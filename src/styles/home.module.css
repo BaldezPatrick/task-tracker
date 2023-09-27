@@ -98,15 +98,10 @@
 @media screen and (max-width: 500px) {
 .selectLangWrapper {
     left: 0;
-    position: fixed;
 }
 
 .selectLangWrapper select {
     padding: 0;
-}
-
-.selectLangWrapper select option {
-    border: none;
 }
 
 .tasksFormWrapper {
