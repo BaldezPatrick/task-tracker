@@ -1,8 +1,16 @@
 import { useEffect, useState } from "react";
-import { Notifications, TaskForm, TaskList, TaskSearch } from "@/components";
+import {
+  LanguageSelector,
+  Notifications,
+  TaskForm,
+  TaskList,
+  TaskSearch,
+} from "@/components";
 import styles from "../styles/home.module.css";
+import { useTranslation } from "react-i18next";
 
 export default function Home() {
+  const { t } = useTranslation();
   const [tasks, setTasks] = useState([]);
   const [notifications, setNotifications] = useState([]);
   const [editingTask, setEditingTask] = useState(null);
@@ -40,7 +48,7 @@ export default function Home() {
     try {
       e.preventDefault();
       if (newTask.trim() === "") {
-        createNotifications("Empty input", "delete");
+        createNotifications(t("notifications.error"), "delete");
         return;
       }
 
@@ -52,7 +60,7 @@ export default function Home() {
       setTasks([...tasks, newTaskCreated]);
       setNewTask("");
       setInputFilterTask("");
-      createNotifications("Task added", "success");
+      createNotifications(t("notifications.success"), "success");
       localStorage.setItem("tasks", JSON.stringify([...tasks, newTaskCreated]));
     } catch (error) {
       console.error("Error: ", error);
@@ -63,7 +71,7 @@ export default function Home() {
     try {
       const deletedTask = tasks.filter((task) => task.id !== taskId);
       setTasks(deletedTask);
-      createNotifications("Task deleted", "delete");
+      createNotifications(t("notifications.delete"), "delete");
       localStorage.setItem("tasks", JSON.stringify(deletedTask));
     } catch (error) {
       console.error("Error: ", error);
@@ -82,7 +90,7 @@ export default function Home() {
     try {
       e.preventDefault();
       if (inputTaskEdit.trim() === "") {
-        createNotifications("Empty input", "error");
+        createNotifications(t("notifications.error"), "error");
         return;
       }
       const updatedTask = tasks.map((task) =>
@@ -92,7 +100,7 @@ export default function Home() {
       setTasks(updatedTask);
       setInputTaskEdit("");
       setEditingTask(null);
-      createNotifications("Task edited", "success");
+      createNotifications(t("notifications.edit"), "success");
       localStorage.setItem("tasks", JSON.stringify(updatedTask));
     } catch (error) {
       console.error("Error: ", error);
@@ -110,11 +118,14 @@ export default function Home() {
   return (
     <>
       <header className={styles.headerWrapper}>
-        <h2>Task Tracker</h2>
+        <h2>{t("header.title")}</h2>
+        <div className={styles.selectLangWrapper}>
+          <LanguageSelector />
+        </div>
       </header>
       <main className={styles.mainWrapper}>
         <section className={styles.tasksFormWrapper}>
-          <h3>Remember your taks and do them!</h3>
+          <h3>{t("main.title")}</h3>
           <TaskForm
             addTask={addTask}
             newTask={newTask}
