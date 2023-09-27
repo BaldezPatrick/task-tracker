@@ -1,5 +1,6 @@
 import "@/styles/globals.css";
 import Head from "next/head";
+import "../../public/i18Next/i18n";
 export default function App({ Component, pageProps }) {
   return (
     <>
