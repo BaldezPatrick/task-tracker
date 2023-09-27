@@ -23,6 +23,7 @@ Visit the demo: https://task-tracker-delta-one.vercel.app/
 4. NEW: To edit a task, click the "Edit" button, then you are going to be able to edit. After just click in the save button. 
 5. New: To serch a task, write it in the Search input box and the task will appear in the list. if the task doesn't have the letter or word sought, it will result in an empty list. It is a 
 dynamic list.
+6. NEW: i18next for internationalization
 
 
 ## Installation
