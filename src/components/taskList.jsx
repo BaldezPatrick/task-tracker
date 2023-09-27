@@ -1,5 +1,6 @@
 import { useMemo, useRef } from "react";
 import styles from "../styles/taskList.module.css";
+import { useTranslation } from "react-i18next";
 
 const TaskList = ({
   tasks,
@@ -11,6 +12,7 @@ const TaskList = ({
   inputTaskEdit,
   editingTask,
 }) => {
+  const { t } = useTranslation();
   const filterTaskToLowerCase = filterTask.toLowerCase();
   const filteredTasks = useMemo(() => {
     return tasks.filter((task) =>
@@ -25,8 +27,8 @@ const TaskList = ({
           <li className={styles.taskNoFound}>
             <p>
               {tasks.length === 0
-                ? "Tell us your first task"
-                : "No task was found..."}
+                ? t("taskList.infoFirstTask")
+                : t("taskList.infoTaskNotFound")}
             </p>
           </li>
         ) : (
@@ -44,7 +46,7 @@ const TaskList = ({
                       onChange={(e) => setInputTaskEdit(e.target.value)}
                     />
                     <button id="send-task" type="submit">
-                      Save
+                      {t("taskList.saveButton")}
                     </button>
                   </form>
                 </>
@@ -52,8 +54,12 @@ const TaskList = ({
                 <>
                   {task.title}
                   <div className={styles.buttonsWrapper}>
-                    <button onClick={() => editTask(task.id)}>Edit</button>
-                    <button onClick={() => deleteTask(task.id)}>Delete</button>
+                    <button onClick={() => editTask(task.id)}>
+                      {t("taskList.editButton")}
+                    </button>
+                    <button onClick={() => deleteTask(task.id)}>
+                      {t("taskList.deleteButton")}
+                    </button>
                   </div>
                 </>
               )}
