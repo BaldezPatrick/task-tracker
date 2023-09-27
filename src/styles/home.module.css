@@ -99,15 +99,10 @@
 .selectLangWrapper {
     top: 90vh;
     left: 0;
-    position: fixed;
 }
 
 .selectLangWrapper select {
     padding: 0;
-}
-
-.selectLangWrapper select option {
-    border: none;
 }
 
 .tasksFormWrapper {
