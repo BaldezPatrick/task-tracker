@@ -1,0 +1,33 @@
+{
+  "translation": {
+    "header": {
+      "title": "Task Tracker"
+    },
+    "main": {
+      "title": "Remember your tasks and do them!"
+    },
+    "selectedLanguage": {
+      "pt": "PT",
+      "en": "EN"
+    },
+    "taskForm": {
+      "placeholderSend": "New task...",
+      "placeholderSearch": "Search task...",
+      "buttonSendText": "Send",
+      "buttonSearchText": "Search"
+    },
+    "taskList": {
+      "infoFirstTask": "Tell us your first task",
+      "infoTaskNotFound": "No task was found",
+      "saveButton": "Save",
+      "editButton": "Edit",
+      "deleteButton": "Delete"
+    },
+    "notifications": {
+      "success": "Task added",
+      "delete": "Task deleted",
+      "edit": "Task edited",
+      "error": "Empyt input"
+    }
+  }
+}
